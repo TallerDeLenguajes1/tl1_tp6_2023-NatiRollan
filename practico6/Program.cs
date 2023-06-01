@@ -1,35 +1,53 @@
 ﻿// See https://aka.ms/new-console-template for more information
-/*Console.WriteLine("Hello, World!");
 
-int a;
-int b;
-a=10;
-b=a;
-Console.WriteLine("valor de a:"+a);
-Console.WriteLine("valor de b:"+b);*/
-
-int intNum1=0;
-string? numString= "";
-Console.WriteLine("Ingrese un numero: ");
-numString = Console.ReadLine();
-if (int.TryParse(numString, out intNum1))
+int respuesta;
+do
 {
-    if (intNum1 > 0)
+    Console.WriteLine("------------- MENU ------------------");
+    Console.WriteLine("1- Sumar");
+    Console.WriteLine("2- Restar");
+    Console.WriteLine("3- Multiplicar");
+    Console.WriteLine("4- Dividir");
+    Console.WriteLine("Seleccione una opcion: ");
+
+    int opcion;
+    int.TryParse(Console.ReadLine(), out opcion); //lee un string ingresado por el usuario, convierte a nro entero y almacena el resultado en la variable opcion
+
+    int num1, num2;
+    float resultado = 0; //en c# cuando divido 2 nros enteros el resultado se trunca automatica_ a nro entero
+                         //si quiero un resultado con decimales, entonces num1 y num2 tienen que ser float
+    Console.WriteLine("Ingrese el primer numero: ");
+    int.TryParse(Console.ReadLine(), out num1);
+    Console.WriteLine("Ingrese el segundo numero: ");
+    int.TryParse(Console.ReadLine(), out num2);
+
+    switch (opcion)
     {
-        string? numAux = "";
-        while (intNum1 != 0)
-        {
-            int digito = intNum1 % 10;
-            numAux = numAux + digito.ToString();
-            intNum1 /= 10;
-        }
-        Console.WriteLine("El numero invertido es: " + numAux);
-    } else
-    {
-        Console.WriteLine("El texto ingresado no es mayor a 0");
+        case 1:
+            resultado = num1 + num2;
+            Console.WriteLine("El resultado es: " + resultado);
+        break;
+        case 2:
+            resultado = num1 - num2;
+            Console.WriteLine("El resultado es: " + resultado);
+        break;
+        case 3:
+            resultado = num1 * num2;
+            Console.WriteLine("El resultado es: " + resultado);
+        break;
+        case 4:
+            if (num2 != 0)
+            {
+                resultado = num1 / num2;
+                Console.WriteLine("El resultado es: " + resultado);
+            } else
+            {
+                Console.WriteLine("Error");
+            }
+        break;   
     }
+    
+    Console.WriteLine("\nDesea realizar otro calculo? (0=No - 1=Si): ");
+    int.TryParse(Console.ReadLine(), out respuesta);
 
-} else
-{
-    Console.WriteLine("El texto ingresado no es un numero");
-}
+} while (respuesta != 0);
