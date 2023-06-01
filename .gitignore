@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,dotnetcore
-# Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudiocode,dotnetcore
+# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,dotnetcore,jsonnet,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudiocode,dotnetcore,jsonnet,windows
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -421,4 +421,34 @@ obj/
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,dotnetcore
+### Jsonnet ###
+# Dependency directories
+vendor/
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode,dotnetcore,jsonnet,windows
